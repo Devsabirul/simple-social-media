@@ -1,0 +1,7 @@
+span.MuiTypography-root.btn.btn-outline-secondary.MuiTypography-colorPrimary {
+    padding: 9px;
+    margin-top: 20px;
+}
+span.MuiTypography-root.btn.btn-outline-secondary.MuiTypography-colorPrimary:hover {
+    background-color: rgb(12, 107, 107) !important;
+}
