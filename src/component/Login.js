@@ -7,11 +7,9 @@ import React, { useContext, useState } from 'react'
 import { authContext, UserContext } from '../App';
 import MuiAlert from '@material-ui/lab/Alert';
 //firebase component
-import { initializeApp } from 'firebase/app'
+import { firebaseConfig } from './Config'
 import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
-import firebaseConfig from './Config'
 import { useHistory, useLocation } from 'react-router-dom';
-initializeApp(firebaseConfig);
 const styles = makeStyles(theme => ({
     loginHeader: {
         fontSize: "60px",

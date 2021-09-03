@@ -19,6 +19,8 @@ const styles = makeStyles(theme => ({
         width: "25%",
         [theme.breakpoints.down("sm")]: {
             width: "20%",
+            position: " absolute",
+            left: "-17px"
         },
     },
     item: {

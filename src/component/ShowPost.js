@@ -50,7 +50,7 @@ const ShowPost = ({ img, title }) => {
                     title={name}
                     subheader="September 14, 2016"
                 />
-                <Typography variant="h5" style={{ marginBottom: "10px", padding: "10px" }}>
+                <Typography style={{ marginBottom: "10px", padding: "10px" }}>
                     {title}
                 </Typography>
                 <CardMedia
@@ -58,12 +58,6 @@ const ShowPost = ({ img, title }) => {
                     image={img}
                     title="Paella dish"
                 />
-                <CardContent>
-                    <Typography variant="body2" color="textSecondary" component="p">
-                        This impressive paella is a perfect party dish and a fun meal to cook together with your
-                        guests. Add 1 cup of frozen peas along with the mussels, if you like.
-                    </Typography>
-                </CardContent>
                 <CardActions disableSpacing>
                     <IconButton aria-label="add to favorites">
                         <Tooltip title="Like" placement="top">

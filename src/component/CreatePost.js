@@ -7,9 +7,7 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import React, { useContext, useState } from 'react'
 import { authContext } from '../App';
 //firebase Related
-import { initializeApp } from 'firebase/app'
-import firebaseConfig from './Config'
-initializeApp(firebaseConfig)
+
 const styles = makeStyles(theme => ({
     container: {
         padding: "10px",

@@ -16,7 +16,10 @@ const useStyles = makeStyles((theme) => ({
         position: "fixed",
         top: 20,
         padding: "80px",
-        paddingRight: "55%"
+        paddingRight: "55%",
+        [theme.breakpoints.down("sm")]: {
+            padding: "4px",
+        }
     },
     title: {
         fontSize: 16,

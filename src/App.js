@@ -4,6 +4,7 @@ import './App.css';
 import Header from './component/Header';
 import Login from './component/Login';
 import Home from './component/Home'
+import Error from './component/Error'
 import PrivateRoute from './component/PrivateRoute';
 
 export const UserContext = createContext();
@@ -31,6 +32,11 @@ function App() {
         <Switch>
           <Route exact path="/login" >
             <Login />
+          </Route>
+        </Switch>
+        <Switch>
+          <Route path="/" >
+            <Error />
           </Route>
         </Switch>
       </authContext.Provider>
