@@ -7,11 +7,15 @@ import {
     CardMedia,
     IconButton,
     makeStyles,
+    Tooltip,
     Typography,
 } from "@material-ui/core";
+import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import React, { useContext, useState } from 'react'
+import { authContext } from '../App';
 
 const useStyles = makeStyles((theme) => ({
     card: {
@@ -27,12 +31,14 @@ const useStyles = makeStyles((theme) => ({
 
 const ShowPost = ({ img, title }) => {
     const classes = useStyles();
+    const [user] = useContext(authContext)
+    const { photo, name } = user;
     return (
         <>
             <Card className={classes.card}>
                 <CardHeader
                     avatar={
-                        <Avatar aria-label="recipe" className={classes.avatar}>
+                        <Avatar aria-label="recipe" src={photo} className={classes.avatar}>
                             R
                         </Avatar>
                     }
@@ -41,10 +47,10 @@ const ShowPost = ({ img, title }) => {
                             <MoreVertIcon />
                         </IconButton>
                     }
-                    title="Shrimp and Chorizo Paella"
+                    title={name}
                     subheader="September 14, 2016"
                 />
-                <Typography variant="h5" style={{ marginLeft: "30px", marginBottom: "10px", padding: "10px" }}>
+                <Typography variant="h5" style={{ marginBottom: "10px", padding: "10px" }}>
                     {title}
                 </Typography>
                 <CardMedia
@@ -60,10 +66,19 @@ const ShowPost = ({ img, title }) => {
                 </CardContent>
                 <CardActions disableSpacing>
                     <IconButton aria-label="add to favorites">
-                        <FavoriteIcon color="secondary" />
+                        <Tooltip title="Like" placement="top">
+                            <FavoriteIcon color="secondary" />
+                        </Tooltip>
                     </IconButton>
                     <IconButton aria-label="share">
-                        <ShareIcon />
+                        <Tooltip title="Comment" placement="top">
+                            <ChatBubbleOutlineIcon />
+                        </Tooltip>
+                    </IconButton>
+                    <IconButton aria-label="share">
+                        <Tooltip title="Share" placement="top">
+                            <ShareIcon />
+                        </Tooltip>
                     </IconButton>
                 </CardActions>
             </Card>
