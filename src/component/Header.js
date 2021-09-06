@@ -28,7 +28,10 @@ const styles = makeStyles(theme => ({
         [theme.breakpoints.up("sm")]: {
             display: "none",
         },
-        cursor: "pointer"
+        cursor: "pointer",
+        [theme.breakpoints.down("sm")]:{
+            textAlign: "center"
+        },
     },
     search: {
         display: 'flex',
@@ -91,17 +94,9 @@ const Header = () => {
             <Container maxWidth="">
                 <Toolbar className={classes.toolbar}>
                     <Typography variant="h5" className={classes.logoLg} >
-                        {/* <MenuIcon className={classes.logoLg}
-                            fontSize="large"
-                            style={{ cursor: 'pointer' }}
-                        /> */}
                         FRIENDS ZOON
                     </Typography>
                     <Typography variant="h5" className={classes.logoSm} >
-                        {/* <MenuIcon className={classes.logoLg}
-                            fontSize="large"
-                            style={{ cursor: 'pointer' }}
-                        /> */}
                         FD ZOON
                     </Typography>
                     <div className={classes.search} >

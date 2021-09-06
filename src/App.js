@@ -4,11 +4,11 @@ import './App.css';
 import Header from './component/Header';
 import Login from './component/Login';
 import Home from './component/Home'
-import Error from './component/Error'
 import PrivateRoute from './component/PrivateRoute';
 
 export const UserContext = createContext();
 export const authContext = createContext();
+export const postContext = createContext();
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -20,25 +20,23 @@ function App() {
     success: false,
     error: false,
   });
+  const [posts, setPosts] = useState([])
   return (
     <UserContext.Provider value={[loggedIn, setLoggedIn]}>
       <authContext.Provider value={[user, setUser]}>
-        <Header />
-        <Switch>
-          <PrivateRoute exact path="/">
-            <Home />
-          </PrivateRoute>
-        </Switch>
-        <Switch>
-          <Route exact path="/login" >
-            <Login />
-          </Route>
-        </Switch>
-        <Switch>
-          <Route path="/" >
-            <Error />
-          </Route>
-        </Switch>
+        <postContext.Provider value={[posts, setPosts]}>
+          <Header />
+          <Switch>
+            <PrivateRoute exact path="/">
+              <Home />
+            </PrivateRoute>
+          </Switch>
+          <Switch>
+            <Route exact path="/login" >
+              <Login />
+            </Route>
+          </Switch>
+        </postContext.Provider>
       </authContext.Provider>
     </UserContext.Provider>
   );

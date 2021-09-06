@@ -1,6 +1,5 @@
 import { Container, makeStyles } from "@material-ui/core"
 import CreatePost from "./CreatePost"
-import PostData from "./PostData"
 import ShowPost from "./ShowPost"
 import StoryReel from "./StoryReel"
 const styles = makeStyles(theme => ({
@@ -25,7 +24,7 @@ const NewsFeed = () => {
             <div className={classes.gridContainer}>
                 <CreatePost />
             </div>
-            <PostData />
+            <ShowPost />
         </Container>
     )
 }
